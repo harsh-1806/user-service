@@ -1,0 +1,30 @@
+#spring.application.name=userService
+spring:
+  application:
+    name: userService
+#    DB Datasource
+  datasource:
+    username: test
+    password: password
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://35.207.194.224:5432/user_service
+
+#    Kafka Properties
+  kafka:
+    bootstrap-servers: 35.207.194.224:9092
+    consumer:
+      group-id: user-info-consumer-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: com.harsh.userService.deserializer.UserInfoDeserializer
+    topic:
+      name: user_service
+  jpa:
+    hibernate:
+      ddl-auto: create
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+server:
+  port: 9090
+logging:
+  level:
+    org.springframework.security: DEBUG
+
