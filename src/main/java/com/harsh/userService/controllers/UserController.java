@@ -2,6 +2,7 @@ package com.harsh.userService.controllers;
 
 import com.harsh.userService.entities.UserInfoDto;
 import com.harsh.userService.services.UserService;
+import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,8 +33,11 @@ public class UserController {
         }
     }
 
-    @GetMapping("/getUser")
-    public ResponseEntity<UserInfoDto> getUser(String userId) {
+    @GetMapping("/getUser/{id}")
+    public ResponseEntity<UserInfoDto> getUser(
+            @PathVariable(value = "id")
+            String userId
+    ) {
         try {
             UserInfoDto userInfoDto = userService.getUserByUserId(userId);
             return ResponseEntity.ok(userInfoDto);

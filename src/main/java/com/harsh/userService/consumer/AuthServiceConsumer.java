@@ -15,7 +15,7 @@ public class AuthServiceConsumer {
         this.userService = userService;
     }
 
-    @KafkaListener(topics = "${spring.kafka.topic.name}", groupId = "${spring.kafka.consumer.group-id}")
+    @KafkaListener(topics = "${spring.kafka.topic.name}")
     public void listen(UserInfoDto eventData) {
         try {
             // TODO : Make it transactional to handle **idempotency** and validate phoneNumber, email etc, can use redis distributed lock
