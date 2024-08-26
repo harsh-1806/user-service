@@ -35,7 +35,7 @@ public class UserController {
 
     @GetMapping("/getUser")
     public ResponseEntity<UserInfoDto> getUser(
-            @PathVariable(value = "id")
+            @RequestHeader(value = "X-User-ID")
             String userId
     ) {
         try {
