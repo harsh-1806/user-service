@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/users/v1")
+@RequestMapping("api/v1/users")
 public class UserController {
 
     private final UserService userService;
