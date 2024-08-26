@@ -33,7 +33,7 @@ public class UserController {
         }
     }
 
-    @GetMapping("/getUser/{id}")
+    @GetMapping("/getUser")
     public ResponseEntity<UserInfoDto> getUser(
             @PathVariable(value = "id")
             String userId
