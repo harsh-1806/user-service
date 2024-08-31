@@ -6,11 +6,11 @@ spring:
     username: ${POSTGRES_USER:root}
     password: ${POSTGRES_PASSWORD:password}
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:user_db}
+    url: jdbc:postgresql://${POSTGRES_HOST:postgres}:${POSTGRES_PORT:5432}/${POSTGRES_DB:user_db}
 
 #    Kafka Properties
   kafka:
-    bootstrap-servers: ${KAFKA_HOST:localhost}:${KAFKA_PORT:9092}
+    bootstrap-servers: ${KAFKA_HOST:kafka}:${KAFKA_PORT:9092}
     consumer:
       group-id: user-info-consumer-group
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
